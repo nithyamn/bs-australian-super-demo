@@ -1,0 +1,34 @@
+{
+  "server": "hub-cloud.browserstack.com",
+  "user": "BROWSERSTACK_USERNAME",
+  "key": "BROWSERSTACK_ACCESS_KEY",
+
+  "capabilities": {
+    "build": "Australian Super",
+    "project": "BrowserStack demo - Web",
+    "name": "parallel_suite_test",
+    "browserstack.debug": "true",
+    "browserstack.networkLogs": "true",
+    "browserstack.console": "verbose"
+  },
+
+  "environments": {
+    "chrome": {
+      "browser": "chrome",
+      "browser_version": "latest-3"
+    },
+    "firefox": {
+      "browser": "firefox",
+      "browser_version": "latest"
+    },
+
+    "android": {
+      "os_version": "10.0",
+      "device": "Google Pixel 4"
+    },
+    "iphone":{
+      "os_version" : "13",
+      "device": "iPhone 11"
+    }
+  }
+}

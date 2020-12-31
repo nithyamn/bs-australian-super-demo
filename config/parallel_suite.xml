@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel" thread-count="5" parallel="tests">
+    <test name="SingleTestChrome">
+        <parameter name="config" value="parallel_suite.conf.json"/>
+        <parameter name="environment" value="chrome"/>
+        <classes>
+            <class name="ParallelSuite.InvestmentsTest"/>
+        </classes>
+    </test>
+
+    <test name="SingleTestFirefox">
+        <parameter name="config" value="parallel_suite.conf.json"/>
+        <parameter name="environment" value="firefox"/>
+        <classes>
+            <class name="ParallelSuite.InsuranceTest"/>
+        </classes>
+    </test>
+
+    <test name="SingleTestAndroid">
+        <parameter name="config" value="parallel_suite.conf.json"/>
+        <parameter name="environment" value="android"/>
+        <classes>
+            <class name="ParallelSuite.Careers"/>
+        </classes>
+    </test>
+    <test name="SingleTestIphone">
+        <parameter name="config" value="parallel_suite.conf.json"/>
+        <parameter name="environment" value="iphone"/>
+        <classes>
+            <class name="ParallelSuite.ContactUsTest"/>
+        </classes>
+    </test>
+</suite>
