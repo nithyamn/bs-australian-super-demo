@@ -1,6 +1,6 @@
 # bs-australian-super-demo
 
-##Set following env variables before running tests
+## Set following env variables before running tests
 
 `` export BROWSERSTACK_USERNAME=<browserstack-username>
 ``
@@ -17,7 +17,7 @@
 `` export rec_email_id=<rec_email_id>
 ``
 
-##Running tests
+## Running tests
 
 * Run single test : `mvn test -P single`
 * Run parallel test : `mvn test -P parallel`
