@@ -4,7 +4,7 @@
   "key": "BROWSERSTACK_ACCESS_KEY",
 
   "capabilities": {
-    "build": "Australian Super",
+    "build": "BROWSERSTACK_BUILD_NAME",
     "project": "BrowserStack demo - Web",
     "name": "parallel_suite_test",
     "browserstack.debug": "true",
