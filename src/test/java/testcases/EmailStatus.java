@@ -36,9 +36,9 @@ public class EmailStatus {
         properties.put("mail.smtp.host","smtp.gmail.com");
         properties.put("mail.smtp.port","587");
 
-        final String myEmailAddress = "testflow27@gmail.com";
-        final String myPassword = System.getenv("email_id");
-        String recepient = System.getenv("password");
+        final String myEmailAddress = System.getenv("email_id");
+        final String myPassword = System.getenv("password");
+        String recepient =  System.getenv("rec_email_id");
 
         Session session = Session.getInstance(properties, new Authenticator() {
             @Override
