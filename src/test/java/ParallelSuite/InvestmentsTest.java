@@ -18,9 +18,9 @@ public class InvestmentsTest extends BrowserStackRunner {
         EmailStatus emailStatus = new EmailStatus(BrowserStackRunner.username, BrowserStackRunner.accessKey);
         SessionId sessionId = ((RemoteWebDriver) driver).getSessionId();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
 
-        /* Navigating to Australian Super's website */
+        /** Navigating to Australian Super's Investments page **/
 
         driver.get("https://www.australiansuper.com/");
         driver.findElement(By.linkText("Investments")).click();
@@ -28,8 +28,9 @@ public class InvestmentsTest extends BrowserStackRunner {
 
         Thread.sleep(3000);
 
-        JavascriptExecutor jse = (JavascriptExecutor)driver;
         String title = driver.getTitle();
+
+        /** Marking test status on BrowserStack **/
         if(title.contains("Superannuation Investments | AustralianSuper")) {
             jse.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"passed\", \"reason\": \"Expected Result\"}}");
         }

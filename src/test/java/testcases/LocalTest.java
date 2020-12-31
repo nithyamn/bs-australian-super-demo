@@ -12,16 +12,22 @@ public class LocalTest extends BrowserStackRunner {
     public void test() throws Exception {
         EmailStatus emailStatus = new EmailStatus(BrowserStackRunner.username, BrowserStackRunner.accessKey);
         SessionId sessionId = ((RemoteWebDriver) driver).getSessionId();
+
+        /*** Local website ***/
         driver.get("http://bs-local.com:45691/check");
 
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         String content = driver.findElement(By.xpath("/html/body")).getText();
+
+        /** Marking test status on BrowserStack **/
         if(content.contains("Up and running")) {
             jse.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"passed\", \"reason\": \"Expected Result\"}}");
         }
         else{
             jse.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"failed\", \"reason\": \"Unexpected Result\"}}");
         }
+
+        /** Trigger email for test status **/
         emailStatus.triggerEmail(sessionId);
     }
 }

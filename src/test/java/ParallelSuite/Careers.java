@@ -17,21 +17,24 @@ public class Careers extends BrowserStackRunner{
         EmailStatus emailStatus = new EmailStatus(BrowserStackRunner.username, BrowserStackRunner.accessKey);
         SessionId sessionId = ((RemoteWebDriver) driver).getSessionId();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
 
-        /* Navigating to Australian Super's website */
+        /** Navigating to Australian Super's Careers page **/
 
         driver.get("https://www.australiansuper.com/");
 
         Thread.sleep(3000);
-        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         Thread.sleep(3000);
 
         driver.findElement(By.linkText("CAREERS")).click();
         System.out.println(driver.getTitle());
 
-        JavascriptExecutor jse = (JavascriptExecutor)driver;
+
         String title = driver.getTitle();
+
+        /** Marking test status on BrowserStack **/
+
         if(title.contains("Careers | AustralianSuper")) {
             jse.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"passed\", \"reason\": \"Expected Result\"}}");
         }
