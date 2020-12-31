@@ -1,6 +1,6 @@
 # bs-australian-super-demo
 
-## Set following env variables before running tests
+## Set following environment variables before running tests
 
 `` export BROWSERSTACK_USERNAME=<browserstack-username>
 ``
