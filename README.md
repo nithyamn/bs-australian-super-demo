@@ -27,3 +27,7 @@
 * Run parallel test : `mvn test -P parallel`
 * Run local test : `mvn test -P local`
 * Run parallel suite : `mvn test -P parallel_suite`
+
+## Check results on BrowserStack Automate Dashboard
+
+* https://automate.browserstack.com
