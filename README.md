@@ -11,10 +11,14 @@
 `` export email_id=<email_id>
 ``
 
-`` export passowrd=<password>
+`` export password=<password>
 ``
 
 `` export rec_email_id=<rec_email_id>
+``
+
+``
+   export BROWSERSTACK_BUILD_NAME=<build_name>
 ``
 
 ## Running tests

@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeMethod;
 
 import java.io.FileReader;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -70,14 +71,14 @@ public class BrowserStackRunner {
             accessKey = (String) config.get("key");
         }
 
-        /*if (capabilities.getCapability("browserstack.local") != null
-                && capabilities.getCapability("browserstack.local") == "true") {
-            bsLocal = new Local();
-            HashMap<String, String> bsLocalArgs = new HashMap<String, String>();
-            bsLocalArgs.put("key", accessKey);
-            bsLocal.start(bsLocalArgs);
-            System.out.println(bsLocal.isRunning());
-        }*/
+//        if (capabilities.getCapability("browserstack.local") != null
+//                && capabilities.getCapability("browserstack.local") == "true") {
+//            bsLocal = new Local();
+//            HashMap<String, String> bsLocalArgs = new HashMap<String, String>();
+//            bsLocalArgs.put("key", accessKey);
+//            bsLocal.start(bsLocalArgs);
+//            System.out.println(bsLocal.isRunning());
+//        }
 
         driver = new RemoteWebDriver(
                 new URL("http://" + username + ":" + accessKey + "@" + config.get("server") + "/wd/hub"), capabilities);
@@ -86,8 +87,8 @@ public class BrowserStackRunner {
     @AfterMethod(alwaysRun = true)
     public void tearDown() throws Exception {
         driver.quit();
-        /*if (bsLocal != null) {
-            bsLocal.stop();
-        }*/
+//        if (bsLocal != null) {
+//            bsLocal.stop();
+//        }
     }
 }
